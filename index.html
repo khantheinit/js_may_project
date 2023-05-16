@@ -7,16 +7,20 @@
     <title>Window</title>
 </head>
 <body>
-    
-    <h1>San Kyi Tar Par</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet molestias unde error minima molestiae adipisci dolorum, repellat, sint fuga quis tempora facilis reprehenderit pariatur eligendi rem delectus quae beatae quisquam!
-    </p>
-    <a href="https://google.com" onclick="return confirm('Do you want to go to google')">to google</a>
+    <h1>Results : <span id="result">0</span>USD</h1>
+    <input type="number" placeholder="MMK Input" id="inputmmk">
+    <button id="calculate">To USD $</button>
 
+    <script>
+        let USDtoMMKRate = 2450;
+        let inputMMK = document.querySelector("#inputmmk");
+        let calculate = document.querySelector("#calculate");
+        let result = document.querySelector("#result")
 
-   <button onclick='run()'>On CLick</button>
-    
-    <script src="./window.js"></script>
+        calculate.addEventListener("click",function(){
+           let usd = inputMMK.valueAsNumber / USDtoMMKRate;
+           result.innerText = usd.toFixed(2);
+        })
+    </script>
 </body>
 </html>
