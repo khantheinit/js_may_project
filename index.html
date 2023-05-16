@@ -7,19 +7,29 @@
     <title>Window</title>
 </head>
 <body>
-    <h1>Results : <span id="result">0</span>USD</h1>
+    <p id="input" style="margin-bottom: 0;"></p>
+    <h1 style="margin-top :0;" >Results : <span id="result">0</span>USD</h1>
     <input type="number" placeholder="MMK Input" id="inputmmk">
     <button id="calculate">To USD $</button>
 
     <script>
         let USDtoMMKRate = 2450;
         let inputMMK = document.querySelector("#inputmmk");
+        let input = document.querySelector("#input")
         let calculate = document.querySelector("#calculate");
         let result = document.querySelector("#result")
 
         calculate.addEventListener("click",function(){
-           let usd = inputMMK.valueAsNumber / USDtoMMKRate;
+          if(inputMMK.value){
+            let usd = inputMMK.valueAsNumber / USDtoMMKRate;
            result.innerText = usd.toFixed(2);
+           input.innerText = inputMMK.valueAsNumber + " MMK equal to ";
+           inputMMK.value= null;
+          }else{
+            alert("mmk input empty")
+          }
+
+           
         })
     </script>
 </body>
