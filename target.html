@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target </title>
+</head>
+<body>
+    <style>
+        div{
+            border: 1px solid black;
+            height: 400px;
+            width: 500px;
+            margin: 200px auto;
+        }
+        body{
+            height: 3000px;
+        }
+    </style>
+
+    <div class="">
+        
+        <ol id="list"></ol>
+
+        <input type="text" id="input">
+        <button id="btn">Click Me</button>
+    </div>
+    
+
+
+    <script>
+        let input = document.querySelector("#input")
+        let btn = document.querySelector("#btn");
+        let list = document.querySelector("#list")
+        
+
+        function send (){
+            list.innerHTML +=`<li>${input.value}</li>`;
+            console.log(input.value);
+            input.value = null;
+        }
+
+        btn.addEventListener("click",function(){
+                send();
+        })
+
+        input.addEventListener("keydown",function(e){
+           if(e.keyCode ===13){
+                send();
+           }
+        })
+
+        window.addEventListener("scroll",function(e){
+            if(window.scrollY > 2000){
+                let email = prompt(" pleae input your email to subscirbe")
+            }
+            console.log(window.scrollY);
+        })
+
+
+    </script>
+</body>
+</html>

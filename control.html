@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Hide </title>
+</head>
+<body>
+    <style>
+        p{
+            padding: 10px;
+            border: 1px solid black;
+            width: 50%;
+        }
+    </style>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus delectus dicta officiis amet totam ducimus rem expedita impedit voluptate quo asperiores eos quod iste repudiandae soluta, consequatur quis laudantium perspiciatis?
+    </p>
+    <button id="showbtn">show</button>
+    <button id="hidebtn">hide</button>
+    <button id="btn">Control</button>
+
+    <script>
+        let show = document.querySelector("#showbtn")
+        let hide = document.querySelector("#hidebtn")
+        let p = document.querySelector("p")
+        let control = document.querySelector("#btn")
+
+        hide.addEventListener("click",function(){
+            p.style.visibility = "hidden"
+        })
+
+        show.addEventListener("click",function(){
+            p.style.visibility = "visible"
+        })
+
+        control.addEventListener("click",function(){
+            console.log(p.style.visibility);
+            if(p.style.visibility == ""){
+                p.style.visibility = "hidden"
+            }else if (p.style.visibility == "visible"){
+                p.style.visibility = "hidden"
+            }
+            else if(p.style.visibility == "hidden"){
+                p.style.visibility = "visible"
+            }
+        })
+    </script>
+</body>
+</html>
