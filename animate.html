@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.css" />
+  </head>
+  <body>
+    <div class="box"></div>
+    <ul id="list" class="list-group w-50 mx-auto mb-5"></ul>
+    <input type="text" name="" id="input" class="form-control w-50 mx-auto" />
+    <!-- <h1 class="animate__animated animate__bounce">An animated element</h1> -->
+
+    <script>
+      let box = document.querySelector(".box");
+      let input = document.querySelector("#input");
+      let list = document.querySelector("#list");
+
+      function createElemnt(text){
+        let li = document.createElement("li")
+        // console.log(li);
+        li.innerHTML = text;
+        li.classList.add("list-group-item")
+        list.append(li);
+      }
+
+    //   box.innerHTML = `<h1 class="animate__animated animate__backInDown">Mingalarpar</h1>`;
+      // box.innerHTML+= `<p> San kyi tar par</p>`;
+      input.addEventListener("keyup", function (e) {
+        if (e.keyCode == 13) {
+            createElemnt(input.value)
+            input.value = null;
+        }
+      });
+    // let li = document.createElement("li")
+    // console.log(li);
+    // li.innerHTML = "san kyi tar";
+    // li.classList.add("list-group-item")
+    // list.append(li);
+
+    // let li2 = document.createElement("li")
+    // console.log(li);
+    // li2.innerHTML = "naykaunglar";
+    // li2.classList.add("list-group-item")
+    // list.append(li2);
+
+    // let li3 = document.createElement("li")
+    // console.log(li);
+    // li3.innerHTML = "mingalarpar";
+    // li3.classList.add("list-group-item")
+    // list.append(li3);
+
+    </script>
+  </body>
+</html>
